@@ -44,8 +44,8 @@ async function main() {
   };
 
   const MINT_CONFIG = {
-    decimals: 6,
-    tokens: 1337,
+    decimals: 8,
+    tokens: 1_000_000_000,
   };
 
   const ON_CHAIN_METADATA = {

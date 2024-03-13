@@ -7,6 +7,7 @@ import {
   getMinimumBalanceForRentExemptMint,
   createAssociatedTokenAccountInstruction,
   createMintToInstruction,
+  getAssociatedTokenAddress,
 } from '@solana/spl-token';
 import secret from './guideSecret.json';
 import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
@@ -28,12 +29,12 @@ import {
 import { base58 } from '@metaplex-foundation/umi/serializers';
 
 const createNewMintTransaction = async (
-  connection: Connection,
-  payer: Keypair,
-  mintKeypair: Keypair,
-  destinationWallet: PublicKey,
-  mintAuthority: PublicKey,
-  freezeAuthority: PublicKey
+  connection: Connection, // done
+  payer: Keypair, // done
+  mintKeypair: Keypair, // done
+  destinationWallet: PublicKey, // done
+  mintAuthority: PublicKey, // done
+  freezeAuthority: PublicKey // done
 ) => {
   //Get the minimum lamport balance to create a new account and avoid rent payments
   const requiredBalance = await getMinimumBalanceForRentExemptMint(connection);
